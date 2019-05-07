@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/pages/login"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h2>You're not in Hawaii :(</h2>
+  <!-- <h2> 🎉You're in Hawaii!! 🎉</h2> -->
+  <div #map id="map"></div>
+  <ion-button size="large" routerLink="/add" routerDirection="forward">Pin</ion-button>
+  <ion-list>
+  <ion-list-header>
+    Locations:
+    </ion-list-header>
+
+    <ion-item
+    *ngFor="let location of locationsList$ | async"
+    (click)="assignLocation(location)"
+    [routerLink]="['/list', locationTitle]" routerDirection="forward">
+    {{location.title}}
+    </ion-item>
+    </ion-list>
+</ion-content>

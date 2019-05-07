@@ -1,0 +1,7 @@
+{
+  "name": "HawaiiApp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
